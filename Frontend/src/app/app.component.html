@@ -1,0 +1,46 @@
+<mat-tab-group>
+  <!-- one way form  -->
+  <mat-tab label="oneWay">
+    <form [formGroup]='oneWayForm'>
+      <mat-form-field>
+        <input formConrolName = 'originOne' matInput placeholder="Origin">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput formControlName = 'destinationOne' placeholder="Destination">
+      </mat-form-field>
+      <mat-form-field>
+          <input formControlName ='startDateOne' matInput readonly (click)='pickerOrigin.open()' [matDatepicker]="pickerOrigin" placeholder="Choose a date">
+          <mat-datepicker-toggle matSuffix [for]="pickerOrigin"></mat-datepicker-toggle>
+          <mat-datepicker #pickerOrigin></mat-datepicker>
+        </mat-form-field>
+          <button mat-button type='submit' (click)='bookOneWay()'>Book</button>
+        </form>
+  </mat-tab>
+  
+
+  <!-- one way form  -->
+  <mat-tab label="Round Trip">
+      <form [formGroup]='roundTripForm'>
+        <mat-form-field>
+          <input formConrolName = 'originRound' matInput placeholder="Origin">
+        </mat-form-field>
+        <mat-form-field>
+          <input matInput formControlName = 'destinationRound' placeholder="Destination">
+        </mat-form-field>
+        <mat-form-field>
+            <input formControlName ='startDateRound' matInput readonly (click)='pickerStart.open()' [matDatepicker]="pickerStart" placeholder="Choose a date">
+            <mat-datepicker-toggle matSuffix [for]="pickerStart"></mat-datepicker-toggle>
+            <mat-datepicker #pickerStart></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+              <input formControlName ='returnDateRound' matInput readonly (click)='pickerRound.open()' [matDatepicker]="pickerRound" placeholder="Choose a date">
+              <mat-datepicker-toggle matSuffix [for]="pickerRound"></mat-datepicker-toggle>
+              <mat-datepicker #pickerRound></mat-datepicker>
+            </mat-form-field>
+            <button mat-button type='submit' (click)='bookOneWay()'>Book</button>
+          </form>
+    </mat-tab>
+  <!-- Multicity -->
+  <!-- Package  -->
+        
+</mat-tab-group>
